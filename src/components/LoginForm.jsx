@@ -1,7 +1,9 @@
 import { useState } from "react";
 import Button from "./Button";
+import { useTheme } from "../contexts/ThemeContext";
 
-export default function LoginForm({user,setUser,theme}) {
+export default function LoginForm({user,setUser}) {
+    const {theme}=useTheme();
     const className="form-"+theme;
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");

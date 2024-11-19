@@ -1,4 +1,6 @@
-export default function ThemeToggle({theme,setTheme}) {
+import { useTheme } from "../contexts/ThemeContext";
+export default function ThemeToggle() {
+    const {theme,setTheme}=useTheme();
   return (
     <label>
       <input
