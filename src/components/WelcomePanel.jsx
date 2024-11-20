@@ -1,14 +1,16 @@
+import { useUser } from "../contexts/UserContext";
 import Greeting from "./Greeting";
 import LoginForm from "./LoginForm";
 import Panel from "./Panel";
 
-export default function WelcomePanel({user,setUser}) {
+export default function WelcomePanel() {
+  const {user}=useUser();
     return (
-        <Panel title="Welcome" user={user} setUser={setUser} >
+        <Panel title="Welcome"  >
           {user !== null ? (
-            <Greeting user={user} setUser={setUser} />
+            <Greeting  />
           ) : (
-            <LoginForm user={user} setUser={setUser}   />
+            <LoginForm  />
           )}
         </Panel>
       );
